@@ -12,7 +12,7 @@ It showcases my skills, projects, and achievements in a clean and modern design.
 - Glassmorphism (frosted glass) navbar  
 - Typing animation effect  
 - Buttons with hover animations  
-- Option to download/view certificates & resume  
+- Option to view certificates & resume  
 
 ---
 

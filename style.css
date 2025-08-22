@@ -1,0 +1,346 @@
+/* Import Fonts FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+/* Navbar */
+header { 
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+}
+nav {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px 50px; 
+}
+.logo { 
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+.nav-links { 
+  list-style: none; 
+  display: flex; 
+  gap: 25px; 
+}
+header nav ul li a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+header nav ul li a:hover {
+  background: rgba(0, 123, 255, 0.2);
+  color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+header nav ul li a.active {
+  background: rgba(0, 123, 255, 0.3);
+  color: #007bff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+.nav-links a::after {
+  content: '';
+  position: relative;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 50px;
+  background:#f9f9f9;
+  min-height:100vh;
+  flex-wrap: wrap;
+}
+.hero-text {
+  flex: 1;
+}
+.hero-text h1, .hero-text h2, .hero-text h3 {
+  margin-bottom: 10px;
+}
+.hero-text h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+}
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #222;
+}
+.hero-text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #444;
+}
+.hero-text .highlight {
+  color: #3b82f6;
+}
+.typing {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+  border-right: 3px solid #4070f4;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(20, end), blink .75s step-end infinite;
+  font-weight: 700;
+  font-size: 32px;
+  color: #222;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ✅ Global Button */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background: #2563eb;
+}
+.btn-box {
+  margin-top: 10px;
+}
+
+.hero-img {
+  flex: 1;
+  text-align:center;
+}
+.hero-img img {
+  max-width: 340px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.blob {
+  width: 320px;
+  aspect-ratio: 4/5;
+  background: #4a90e2;
+  border-radius: 58% 42% 37% 63% / 41% 55% 45% 59%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Section Styling */
+section {
+  width: 85%;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  scroll-margin-top: 120px; /* merged here */
+}
+h2 {
+  margin-bottom: 20px;
+  color: #1976d2;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  color:#1976d2;
+  margin-bottom: 15px;
+}
+.about-text p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Skills */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+.skill-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  border-left: 5px solid transparent;
+}
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-left: 5px solid #3b82f6;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.project-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  border-left: 5px solid transparent;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  border-left: 5px solid #ff5722;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Cards (Internship & Certificates) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+  border-left: 5px solid #6c63ff;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(108,99,255,0.4);
+  border-left: 5px solid #ff6584;
+}
+
+/* Contact */
+#contact {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+#contact h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: indigo;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.contact-icons .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #111;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.icon.linkedin:hover {
+  background: #0e76a8;
+  color: #fff;
+}
+.icon.github:hover {
+  background: #333;
+  color: #fff;
+}
+.icon.email:hover {
+  background: #ea4335;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  #hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text {
+    order: 1;
+  }
+  .hero-img {
+    order: 2;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
